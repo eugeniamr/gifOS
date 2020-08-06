@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="./styles/style-makegif.css">
+	<link rel="icon" type="image/png" href="./assets/globe_img.png">
+	
+	
+	<title>Make GifOS</title>
+</head>
+
+<body class="theme-day">
+  <header class="makegif-header">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</header>
+   <div class="container">
+	<section class="navbar">
+		<a href="index.html">
+			<img src="assets/arrow.svg" alt="arrow" class="arrow">
+			<img src="assets/logo.png" alt="giflogo" class="gifos-img">
+			<img src="assets/logodark.png" class="gifos-night" alt="logo night">
+		</a>
+		
+		<nav>
+			
+			<a href="makegif.html" class="make-gif">
+				<span>Crear Guifos</span>
+			</a>
+			
+			<section class="btn-dropdown">
+				
+				<button class="btn">Elegir tema</button>
+				
+				<div class="dropdown">
+					<label onclick="drop()"><i id="arrow" class="fa fa-sort-down"></i></label>
+					<ul id="btndropdown">
+						<li class="theme-day" id="day"><a href="#"><span class="underlined">S</span>ailor
+							Day</a></li>
+						<li class="theme-night" id="night"><a href="#"><span
+						class="night-underlined">S</span>ailor Night</a>
+					   </li>
+								
+					</ul>
+				</div>
+						
+						
+					</section>
+					
+					<a href="makegif.html" class="mine">
+						<span class="underlined">M</span>is Guifos
+					</a>
+				</nav>
+			</section>		
+		
+
+	<div class="box" id="firstWindow">
+		<div class="box-header">
+			<p class="box-title">Crear Guifos</p>
+		</div>
+		
+		<div class="box-sub-title">
+			<img class="window-icon" src="assets/windowimg.png" alt="window icon">
+			<p class="instruction-title"> Aquí podrás crear tus propios guifos</p>
+		</div>
+		
+	 <div class="instructions-text">
+          <PRE>Crear tu <span class="text-style">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos 
+           personalizados. Los pasos para crear tu guifo son:
+           <span>1)</span> Dar permisos de acceso a la cámara (sólo por el tiempo de uso) 
+           <span>2)</span> Capturar tu momento guifo
+           <span>3)</span> Revisar el momento
+           <span>4)</span> Listo para subir y compartir!
+            ¿Quieres comenzar a crear tu <span class="text-style">guifo</span> ahora? </PRE>
+				
+	 </div>
+			
+			<div class="buttons">
+				<a class="cancel-button" href="index.html">Cancelar</a>
+				<a class="start-button" href="#" onclick="showOrHideWindows1(); seeVideo();">Comenzar</a>
+			</div>
+			
+	</div>
+		
+		<div class="video" id="secondWindow">
+			<div class="video-header">
+				<p class="video-title">Un Chequeo Antes de Empezar</p>
+				<img src="assets/button3.svg" alt="xbutton">
+			</div>
+			
+			<video id="isavideo"></video>
+			
+			<div class="capture">
+				<div><i class="fa fa-camera"></i></div>
+				<a id="btn-start-recording" onclick="showOrHideWindows2(); startRecordingNow();">Capturar</a>
+			</div>
+			
+		</div>
+		
+		
+		<section class="loading-windows" id="thirdWindow">
+			<div class="window-title">
+				<p>Capturando tu Guifo </p>
+				<img src="assets/button3.svg" alt="buttonx">
+			</div>
+			<img id="imagen" alt="mi GifOS" src="//:0migif">
+			<div class="record-buttons">
+				<span id="time" class="timer">00 : 00 : 00</span>
+				
+				<img src="assets/recording.svg" class="recordingIcon" alt="recording button">
+				<button class="record" onclick="showOrHideWindows3(); stopRecordingNow();">Listo</button>
+				
+			</div>
+			
+		</section>
+		
+		
+		<section class="loading-windows1" id="fourthWindow">
+			<div class="window-title1">
+				<span>Vista previa</span>
+				<img src="assets/button3.svg" alt="buttonx">
+			</div>
+			<img id="preview" class="viewimg" alt="vista previa gif capturado" src="//:0migif"> 
+			<div class="windowFooter">
+				<div class="timerandbuttons">
+					<span id="time2" class="timer">00 : 00 : 00</span>
+					<button class="fowardButton" onclick="move();"> <img src="assets/forward.svg" alt="foward"> </button>
+					<div class="progresscontainer">
+						<div id="myProgress">
+							<div id="myBar"></div>
+						</div>
+					</div>
+					<button class="repeat" onclick="showOrHideWindows6();">Repetir captura</button>
+					<button class="upload" id="btn-upload" onclick="uploadGif(); barMovement(); uploadingGif(); showOrHideWindows5();">Subir Guifo</button>
+				</div>
+			</div>
+		</section>
+		
+		<section class="loading-windows2" id="fifthWindow">
+			<div class="window-title">
+				<span>
+					Capturando tu Guifo
+				</span>
+				<img src="assets/button3.svg" alt="buttonx">
+			</div>
+			<div class="uploading-gif"> <img src="assets/globe_img.png" alt="Globo Terraqueo">
+				<p class="upload-title">Estamos subiendo tu Guifo</p>
+				<div class="progress">
+					<div id="myProgress2">
+						<div id="myBar2"></div>
+					</div>
+				</div>
+				<p class="time-left">Tiempo restante: <span>38 años</span> algunos minutos</p>
+			</div>
+			
+			<button onclick="cancelFunction();" class="cancel">Cancelar</button>
+			
+		</section>
+		
+		<section class="loading-windows3" id="sixthWindows">
+			<div class="window-title">
+				<span>
+					Guifo subido con éxito
+			  </span>
+			  <img src="assets/button3.svg" alt="buttonx">
+		 </div>
+		 <div class="img-buttons">
+			  <div class="small-preview">
+				<img class="small-preview-img" id="small" src="//:0migif" alt="Gif Preview">
+			  </div>
+			  <div class="right-buttons">
+					<p>Guifo creado con éxito</p>
+					<button class="copy-link" id="js-textareacopybtn" onclick="copy()">Copiar enlace Guifo</button>
+					<textarea id="copy" class="js-copytextarea"></textarea>
+					<a class="download-gif" href="#" id="btn-download" download="eugenia.gif">Descargar Guifo</a>
+			  </div>
+		 </div>
+				
+		 <div class="ready-button">
+			<button class="ready" id="done" onclick="hideall()">Listo</button>
+		</div>
+			
+			
+		</section>
+		
+		
+		
+	
+	
+		<section id="gifos" class="my-gifos">
+			<h2 class="misGifos">Mis Gifos</h2>
+			
+			<div id="my-gifos-cont" class="gifs-container"></div>
+		</section>
+		
+			
+	</div>
+	<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+	<script src="./javascript/makegif.js"></script>
+ </body>
+
+	
+</html>

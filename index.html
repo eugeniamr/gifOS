@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>gifOS</title>
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="icon" type="image/png" href="./assets/globe_img.png">
+	<link rel="alternative-stylesheet" title="night" href="style-theme2.css">
+	
+</head>
+
+<body id="body" class="theme-day">
+	<header>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</header>
+	<div class="container">
+		<section class="navbar">
+			<a href="index.html">
+				
+				<img src="assets/logo.png" alt="giflogo" class="gifos-img">
+				<img src="assets/logodark.png" class="gifos-night" alt="logo night">
+			</a>
+			
+			<nav>
+				
+				<a href="makegif.html" class="make-gif">
+					<span>Crear Guifos</span>
+				</a>
+				
+				<section class="btn-dropdown">
+					
+					<button class="btn">Elegir tema</button>
+					
+					<div class="dropdown">
+						<label onclick="drop()"><i id="arrow" class="fa fa-sort-down"></i></label>
+						<ul id="btndropdown">
+							<li class="theme-day" id="day"><a href="#"><span class="underlined">S</span>ailor
+								Day</a></li>
+								<li class="theme-night" id="night"><a href="#"><span
+									class="night-underlined">S</span>ailor Night</a>
+								</li>
+								
+							</ul>
+						</div>
+						
+						
+					</section>
+					
+					<a href="makegif.html" class="mine">
+						<span class="underlined">M</span>is Guifos
+					</a>
+				</nav>
+			</section>		
+			
+			<div class="search_bar">
+				<div class="color_bar">
+					<p> Buscar</p>
+				</div>
+				<div class="input_button_block">
+					<input id="search_input" name="user_search" type="text" class="search_type"
+					placeholder="Busca gifs, hashtags, temas, busca lo que quieras...">
+					<a class="button_search" id="button_search" disable onclick="searchGifs()">
+						<img id="lupaIcon" class="search_icon" src="assets/lupa_inactive.svg" alt="search_icon">
+						<p>Buscar</p>
+					</a>
+					
+				</div>
+				
+				
+				
+				<section id="mySuggestion" class="search_hidden">
+					
+					<div id="mySearch" class="search_suggestion">
+						<div class="suggestion1" onclick="search_suggestion1()"> Programming</div>
+						<div class="suggestion1" onclick="search_suggestion2()"> Dancing</div>
+						<div class="suggestion1" onclick="search_suggestion3()"> Rainbow </div>
+					</div>
+					
+				</section>
+			</div>
+			
+			
+			<div class="containerBlue"></div>
+			
+			
+			<section>
+				<h2 class="resultsContainer" id="search-results">Search Results</h2>
+				<div class="resultsGifs" id="result_container"></div>
+			</section>
+			
+			
+			<section class="suggested" id="gifs-suggested">
+				
+				<h2 class="suggested-text">Hoy te sugerimos:</h2>
+				
+				<div id="suggestedGifGrid" class="gifsgrid">
+					
+					<div class="suggestedgifcontainer">
+						<header class="giftext">
+							<p>#KPOP</p>
+							<img src="assets/button3.svg" alt="buttonX">
+						</header>
+						<img id="kpopCategory" class="gif" alt="kpop" src="https://giphy.com/search/kpop">
+						<button class="button-seemore" onclick="seemoreButton()" name="kpop">Ver más...</button>
+						
+					</div>
+					<div class="suggestedgifcontainer">
+						<header class="giftext">
+							<p>#DOGS</p>
+							<img src="assets/button3.svg" alt="buttonX">
+						</header>
+						<img id="dogsCategory" class="gif" alt="dogs" src="https://giphy.com/search/dogs">
+						<button class="button-seemore" onclick="seemoreButton1()" name="dogs">Ver más...</button>
+						
+					</div>
+					<div class="suggestedgifcontainer">
+						<header class="giftext">
+							<p>#TVSHOWS</p>
+							<img src="assets/button3.svg" alt="buttonX">
+						</header>
+						<img id="showsCategory" class="gif" alt="tvshows" src="https://giphy.com/search/tvshows">
+						<button onclick="seemoreButton2()" class="button-seemore" name="tvshows">Ver más...</button>
+						
+					</div>
+					<div class="suggestedgifcontainer">
+						<header class="giftext">
+							<p>#FOOD</p>
+							<img src="assets/button3.svg" alt="buttonX">
+						</header>
+						<img id="foodCategory" class="gif" alt="food" src="https://giphy.com/search/food">
+						<button class="button-seemore" onclick="seemoreButton3()" name="food">Ver más...</button>
+						
+					</div>
+				</div>
+			</section>
+			
+			<section class="trending" id="gifs-trending">
+				<h2 class="trending-text" id="trend-text">Tendencias:</h2>
+				<br>
+				<div id="trendingGifs" class="gif-trending"></div>
+			</section>	
+			
+		</div>
+		
+		
+		<script src="./javascript/main.js"></script>
+		
+		
+	</body>		
+	
+	
+	</html>

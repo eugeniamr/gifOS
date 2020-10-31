@@ -196,27 +196,6 @@ function searchGifs() {
      
   }
 
-  if (containerBlue.childElementCount < 5) {
-    let save = document.createElement('div');
-    save.innerHTML = userInput;
-    containerBlue.appendChild(save);
-    }
-    else{
-      containerBlue.innerText = null;
-      let save = document.createElement('div');
-      save.innerHTML = userInput;
-      containerBlue.appendChild(save);
-    };
-}
-
-
-// search blue div under search box
-
-containerBlue.addEventListener('mousedown', (event) => {
-	userInput = event.target.innerHTML;
-	searchGifs();
-	
-})
 
 // add the name of the result im searching
 
